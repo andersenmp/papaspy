@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import os
+import subprocess
 import sys
 
 class PapaSoundCtrl:
@@ -9,7 +9,7 @@ class PapaSoundCtrl:
 
 	def play(self,tune):
 		cmd = "mpg321 -g 100 -q " + tune
-		os.system(cmd)
+		proc = subprocess.Popen(cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)		
 
 if __name__ == '__main__':
 	if len(sys.argv) > 1:

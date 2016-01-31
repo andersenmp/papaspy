@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import os
+import subprocess
 import sys
 
 class PapaTwitterCtrl:
@@ -9,7 +9,8 @@ class PapaTwitterCtrl:
 
 	def tweet(self,msg):
 		cmd = "twitter set " + msg
-		os.system(cmd)
+		# os.system(cmd)
+		proc = subprocess.Popen(cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
 
 if __name__ == '__main__':
 	if len(sys.argv) > 1:
